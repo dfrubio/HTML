@@ -45,12 +45,10 @@ insert into PRUEBAINSCRIPCION(Eid, NombreClase, Posicion) values (400, 'BA200', 
 insert into PRUEBAINSCRIPCION(Eid, NombreClase, Posicion) values (400, 'BF410', 1);  
 insert into PRUEBAINSCRIPCION(Eid, NombreClase, Posicion) values (450, 'BA200', 3);   
 
-SELECT Especialidad, count(*) FROM PRUEBAESTUDIANTE
+SELECT Especialidad, count(*) FROM PRUEBAESTUDIANTE 
 	group by Especialidad 
-    Having count(*)>1; 
-    
-SELECT * FROM PRUEBACLASE, PRUEBAINSCRIPCION 
-INNER JOIN PRUEBAINSCRIPCION ON Horario = 'M-F9'; 
+    Having count(*)>1
+    order by Especialidad ASC; 
 
 SELECT distinct PRUEBAINSCRIPCION.Eid, PRUEBAINSCRIPCION.NombreClase, PRUEBAINSCRIPCION.Posicion, PRUEBACLASE.Nombre, PRUEBACLASE.Horario, PRUEBACLASE.Aula
 FROM PRUEBAINSCRIPCION
